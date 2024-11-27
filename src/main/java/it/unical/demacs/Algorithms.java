@@ -28,27 +28,27 @@ public class Algorithms {
     /**
      * Checks if two given strings are Anagrams
      *
-     * @param str1
-     * @param str2
+     * @param first
+     * @param second
      * @return a boolean value
      * @throws IllegalArgumentException if one of the strings is null
      */
-    public boolean areAnagrams(String str1, String str2) {
-        if (str1 == null || str2 == null) {
+    public boolean areAnagrams(String first, String second) {
+        if (first == null || second == null) {
             throw new IllegalArgumentException("Strings cannot be null");
         }
 
-        if (str1.length() != str2.length()) {
+        if (first.length() != second.length()) {
             return false;
         }
 
         int[] charCount = new int[26];
 
-        for (char c : str1.toCharArray()) {
+        for (char c : first.toCharArray()) {
             charCount[c - 'a']++;
         }
 
-        for (char c : str2.toLowerCase().toCharArray()) {
+        for (char c : second.toLowerCase().toCharArray()) {
             charCount[c - 'a']--;
         }
 
