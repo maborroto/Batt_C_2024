@@ -8,7 +8,7 @@ public class App {
 //        String phrase = "Corso Di Laurea";
 //        System.out.println("The acronym matches: " + alg.checkAcronym(acronym, phrase));
 
-        int[] array = new int[]{1, 8, 3, 2, 10};
+        int[] array = new int[]{7, 1, 8, 3, 2, 11, 10};
         alg.sort(array);
         System.out.println("Sorted array: ");
         printArray(array);
