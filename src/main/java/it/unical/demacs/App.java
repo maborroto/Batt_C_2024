@@ -8,7 +8,7 @@ public class App {
         String string2 = "arome";
         System.out.println("Are anagrams: " + alg.areAnagrams(string, string2));
 
-        int[] array = new int[]{7, 1, 8, 3, 2, 11, 10};
+        int[] array = new int[]{7, 1, 8, 3, 2, 10, 11};
         alg.sort(array);
         System.out.println("Sorted array: ");
         printArray(array);

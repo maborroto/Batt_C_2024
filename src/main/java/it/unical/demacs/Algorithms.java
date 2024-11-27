@@ -1,5 +1,7 @@
 package it.unical.demacs;
 
+import java.util.HashMap;
+
 public class Algorithms {
 
     /**
@@ -42,22 +44,31 @@ public class Algorithms {
             return false;
         }
 
-        int[] charCount = new int[26];
+        HashMap<Character, Integer> charCount = new HashMap<>();
 
         for (char c : first.toCharArray()) {
-            charCount[c - 'a']++;
-        }
-
-        for (char c : second.toLowerCase().toCharArray()) {
-            charCount[c - 'a']--;
-        }
-
-        for (int count : charCount) {
-            if (count != 0) {
-                return false;
+            if (charCount.containsKey(c)) {
+                charCount.put(c, charCount.get(c) + 1);
+            } else {
+                charCount.put(c, 1);
             }
         }
 
-        return true;
+        System.out.println(charCount.entrySet());
+
+        for (char c : second.toLowerCase().toCharArray()) {
+            if (charCount.containsKey(c)) {
+                if (charCount.get(c) == 0) {
+                    charCount.remove(c);
+                } else {
+                    charCount.put(c, charCount.get(c) - 1);
+                }
+            }
+        }
+
+        System.out.println(charCount.entrySet());
+        System.out.println(charCount.isEmpty());
+
+        return !charCount.isEmpty();
     }
 }
