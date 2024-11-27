@@ -4,9 +4,9 @@ public class App {
 
     public static void main(String[] args) {
         Algorithms alg = new Algorithms();
-//        String acronym = "CDL";
-//        String phrase = "Corso Di Laurea";
-//        System.out.println("The acronym matches: " + alg.checkAcronym(acronym, phrase));
+        String string = "amore";
+        String string2 = "arome";
+        System.out.println("Are anagrams: " + alg.areAnagrams(string, string2));
 
         int[] array = new int[]{7, 1, 8, 3, 2, 11, 10};
         alg.sort(array);
